@@ -10,23 +10,23 @@ spark = SparkSession.builder.master(
 
 # Exercise 1
 
-# custom_schema = StructType([StructField("imdb_title_id", StringType(), True), StructField("title", StringType(), True), StructField("original_title", StringType(), True), StructField("year", StringType(), True), StructField("date_published", StringType(), True), StructField("genre", StringType(), True), StructField("duration", IntegerType(), True), StructField("country", StringType(), True), StructField("language", StringType(), True), StructField("director", StringType(), True), StructField("writer", StringType(), True), StructField(
-#     "production_company", StringType(), True), StructField("actors", StringType(), True), StructField("description", StringType(), True), StructField("avg_vote", StringType(), True), StructField("votes", IntegerType(), True), StructField("budget", StringType(), True), StructField("usa_gross_income", StringType(), True), StructField("worlwide_gross_income", StringType(), True), StructField("metascore", DoubleType(), True), StructField("reviews_from_users", DoubleType(), True), StructField("reviews_from_critics", DoubleType(), True)])
+custom_schema = StructType([StructField("imdb_title_id", StringType(), True), StructField("title", StringType(), True), StructField("original_title", StringType(), True), StructField("year", StringType(), True), StructField("date_published", StringType(), True), StructField("genre", StringType(), True), StructField("duration", IntegerType(), True), StructField("country", StringType(), True), StructField("language", StringType(), True), StructField("director", StringType(), True), StructField("writer", StringType(), True), StructField(
+    "production_company", StringType(), True), StructField("actors", StringType(), True), StructField("description", StringType(), True), StructField("avg_vote", StringType(), True), StructField("votes", IntegerType(), True), StructField("budget", StringType(), True), StructField("usa_gross_income", StringType(), True), StructField("worlwide_gross_income", StringType(), True), StructField("metascore", DoubleType(), True), StructField("reviews_from_users", DoubleType(), True), StructField("reviews_from_critics", DoubleType(), True)])
 
-# df = spark.read.format("csv").option("header", True).schema(
-#     custom_schema).load("data/movies.csv")
-# df.show(2)
+df = spark.read.format("csv").option("header", True).schema(
+    custom_schema).load("data/movies.csv")
+df.show(2)
 
 # Exercise 2
 
-# # creating json file
-# json_path = "movies.json"
-# data_for_json_df = df.limit(10)
-# data_for_json_df.write.mode("overwrite").json(json_path)
-# schema_json = custom_schema  # reusing previously created schema
+# creating json file
+json_path = "movies.json"
+data_for_json_df = df.limit(10)
+data_for_json_df.write.mode("overwrite").json(json_path)
+schema_json = custom_schema  # reusing previously created schema
 
-# movies_from_json_df = df = spark.read.schema(schema_json).json(json_path)
-# movies_from_json_df.show()
+movies_from_json_df = df = spark.read.schema(schema_json).json(json_path)
+movies_from_json_df.show()
 
 # Exercise 4
 
