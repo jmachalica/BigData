@@ -19,7 +19,9 @@ df.show(2)
 
 # Exercise 2
 
+
 # creating json file
+
 json_path = "movies.json"
 data_for_json_df = df.limit(10)
 data_for_json_df.write.mode("overwrite").json(json_path)
