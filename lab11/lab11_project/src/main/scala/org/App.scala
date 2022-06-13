@@ -19,7 +19,7 @@ object App{
     import spark.implicits._
     val reader= new DataReader();
 
-    val flights:DataFrame=reader.read_csv("C:\\Users\\hp\\Documents\\Studia\\3 rok\\6 semestr\\big_data\\lab11_project\\2015-summary.csv", spark.sqlContext, header = true );
+    val flights:DataFrame=reader.read_csv(args(0), spark.sqlContext, header = true );
     flights.show(10);
 
     val flights_dataset= flights.as[Flight];
@@ -29,7 +29,7 @@ object App{
     val filtered=flights_dataset.filter(row => filter.countGt(row, 500))
 
     val writer=new data.DataWriter();
-    writer.write(filtered.toDF(),"C:\\Users\\hp\\Documents\\Studia\\3 rok\\6 semestr\\big_data\\lab11_project\\summary.csv");
+    writer.write(filtered.toDF(),args(1));
 
 
   }
