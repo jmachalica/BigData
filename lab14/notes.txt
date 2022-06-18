@@ -1,0 +1,51 @@
+
+Proces modelowania danych
+Stworzenie abstrakcyjnej reprezentacji danych, w celu ilustracji  typów danych, atrybutów, zależności między danymi.
+Często wyróżnia się modele logiczne i fizyczne.
+
+
+Cardinality 
+stopień unikalności danych w kolumnie, im mniejsze tym więcej powtórzonych elementów
+
+
+Normalizacja danych
+dla baz danych, proces doprowadzenia relacji do postaci normalnej.
+Wyróżnia się różne stopnie normalizacji, w praktyce wykorzystuje się do 3.5NF. 
+Denormalizacja - proces odwrotny do normalizacji.
+
+
+
+
+
+Data mart
+
+tematyczna hurtownia danych, jest to architektura dostępu do hurtowni danych, zapewniająca optymalny dostęp dla danego klienta, np. różne działy w firme, zapewniająca łatwy dostęp do danych które go interesują.
+
+
+Wyróżna  się 3 kategorie:
+	Dependent Data Marts - wykorzystujące istniejącą hurtownie danych.
+ 	Independent Data Marts - brak centralnej hurtowni danych, skupia się na jednym temacie ale wykorzystując inne źródła danych.
+	Hybrid Data Marts - łącząca centralną hurtownie i inne źródła danych
+
+
+
+
+OLAP Cube - struktura danych, przechowujaca dane w sposob wielowymiarowy, zamiast tradycyjnej relacyjnej bazy danych. 
+
+OLAP  -  Online Analytical Processing.
+Każda kostka składa się z wymiarów  i miar - wartości. Wymiary - analizowane zmienne, miary - wartości zmiennych.
+
+Typowe operacje:
+	*slice - wybór podzbioru kostki, wybierajac pojedyncza wartość w którymś wymiarze, tworząc kostke z 1 wymiarem mniej
+	*dice - wybórpodzbioru kostki, wybierając wiele wartości w wielu wymiarach
+	*drill down/up - przejścia pomiędzy poziomami szczegołowości danych
+	*roll-up - zastosowanie agregacji 
+	*pivot - rotacje kostki, w celu zmiany perspektywy ogladania danych
+
+DAX - Data Analysis Expressions - biblioteka funkcji i wyrażeń wykorzystywana do tworzenia formuł w modelach Power BI i Analysis Services.
+
+
+
+
+
+
